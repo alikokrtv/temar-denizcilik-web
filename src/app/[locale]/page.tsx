@@ -5,7 +5,6 @@ import Image from "next/image";
 import React from "react";
 import { ArrowRight, Ship, Droplet, PaintBucket, Globe, Clock, ShieldCheck, Anchor, ChevronRight } from "lucide-react";
 import AnimatedCounter from '@/components/AnimatedCounter';
-import InteractiveMap from '@/components/InteractiveMap';
 import { useTranslations, useLocale } from 'next-intl';
 
 function ServiceCard({ item, locale }: { item: any, locale: string }) {
@@ -283,7 +282,33 @@ export default function Home() {
             </section>
 
             {/* ===== LİMANLAR ===== */}
-            <InteractiveMap locale={locale} />
+            <section className="py-24 px-4 bg-[#0a192f] relative overflow-hidden">
+                <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16 relative z-10">
+                    <div className="w-full md:w-1/2 text-center md:text-left">
+                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 text-blue-400 text-xs font-bold uppercase tracking-widest mb-6">
+                            <Anchor className="w-4 h-4" /> {locale === 'en' ? 'Strong Logistics Network' : 'Güçlü Lojistik Ağı'}
+                        </div>
+                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-6 uppercase leading-tight">
+                            {locale === 'en' ? 'PHYSICAL SUPPLY' : 'FİZİKSEL İKMAL'} <br/>
+                            <span className="text-blue-400">{locale === 'en' ? 'POINTS' : 'NOKTALARIMIZ'}</span>
+                        </h2>
+                        <p className="text-slate-300 text-lg mb-8 leading-relaxed max-w-xl mx-auto md:mx-0">
+                            {locale === 'en'
+                                ? 'We provide limitless supply with our strong partner network not only in Istanbul or the Marmara region but also in Izmir, Mersin, Iskenderun, and Black Sea ports.'
+                                : 'Sadece İstanbul veya Marmara bölgesinde değil; İzmir, Mersin, İskenderun ve Karadeniz limanlarında da güçlü partner ağımızla sınır tanımayan tedarik sağlıyoruz.'}
+                        </p>
+                        <Link href="/iletisim" className="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 text-white font-bold rounded-xl transition-all hover:bg-blue-500 hover:-translate-y-1">
+                            {locale === 'en' ? 'View Map' : 'Haritayı İncele'} <ChevronRight className="w-5 h-5" />
+                        </Link>
+                    </div>
+                    <div className="w-full md:w-1/2">
+                        <div className="relative">
+                            <div className="absolute inset-0 bg-blue-500/20 rounded-[3rem] blur-3xl -z-10 transform scale-95" />
+                            <img src="/barge-map.png" alt="Türkiye Fiziksel İkmal Noktaları" className="w-full h-auto drop-shadow-[0_20px_40px_rgba(37,99,235,0.15)] rounded-2xl" />
+                        </div>
+                    </div>
+                </div>
+            </section>
 
         </main>
     );

@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { Ship, Droplet, PaintBucket, Anchor, CheckCircle2, ArrowRight, ShieldCheck, Clock, Globe } from 'lucide-react';
 import ServiceCarousel from '@/components/ServiceCarousel';
-import InteractiveMap from '@/components/InteractiveMap';
 
 import { useLocale } from 'next-intl';
 
@@ -88,7 +87,7 @@ export default function ServicesPage() {
             desc: locale === 'en'
                 ? 'All kinds of logistics, technical and operational support required by ships during their port stays.'
                 : 'Gemilerin liman konaklamaları süresince ihtiyaç duyduğu her türlü lojistik, teknik ve operasyonel destek.',
-            images: ['/Bunker Fuel.png', '/temar-ikmal-trucks.png'],
+            images: ['/barge-map.png', '/Bunker Fuel.png', '/temar-ikmal-trucks.png'],
             features: locale === 'en' ? [
                 'Document and customs tracking',
                 'Spare parts logistics',
@@ -129,16 +128,10 @@ export default function ServicesPage() {
                         {services.map((service, index) => (
                             <div key={service.id} id={service.id} className={`flex flex-col lg:flex-row gap-12 items-center scroll-mt-32 ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
                                 <div className="w-full lg:w-1/2 relative group">
-                                    {service.id === 'liman' ? (
-                                        <InteractiveMap locale={locale} compact />
-                                    ) : (
-                                        <>
-                                            <ServiceCarousel images={service.images} />
-                                            <div className="absolute top-4 right-4 w-12 h-12 rounded-2xl bg-white/90 backdrop-blur-md flex items-center justify-center text-blue-600 shadow-xl z-20">
-                                                <service.icon className="w-6 h-6" />
-                                            </div>
-                                        </>
-                                    )}
+                                    <ServiceCarousel images={service.images} />
+                                    <div className="absolute top-4 right-4 w-12 h-12 rounded-2xl bg-white/90 backdrop-blur-md flex items-center justify-center text-blue-600 shadow-xl z-20">
+                                        <service.icon className="w-6 h-6" />
+                                    </div>
                                 </div>
                                 <div className="w-full lg:w-1/2">
                                     <h2 className="text-3xl lg:text-4xl font-black text-slate-900 mb-4">{service.title}</h2>
@@ -166,8 +159,6 @@ export default function ServicesPage() {
                 </div>
             </main>
 
-            {/* ===== Interactive Map ===== */}
-            <InteractiveMap locale={locale} />
 
             {/* ===== CTA ===== */}
             <div className="bg-slate-50 px-4 pb-20">
