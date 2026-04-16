@@ -1,0 +1,32 @@
+{
+  "Navigation": {
+    "home": "Ana Sayfa",
+    "corporate": "Kurumsal",
+    "about": "Hakkımızda",
+    "sustainability": "Sürdürülebilirlik",
+    "careers": "Kariyer",
+    "references": "Referanslar",
+    "services": "Hizmetler",
+    "bunker": "Denizcilik İkmal",
+    "lubricant": "Madeni Yağ İkmali",
+    "paint": "Denizcilik Boyaları",
+    "agency": "Liman Hizmetleri",
+    "tools": "Filo & Ekipman",
+    "media": "Medya & Galeri",
+    "contact": "İletişim",
+    "getQuote": "Teklif Talep Et",
+    "adminPanel": "Admin Panel"
+  },
+  "HomePage": {
+    "heroTop": "GLOBAL DENİZCİLİK TEDARİK",
+    "heroTitle1": "Okyanuslarda Güven,",
+    "heroTitle2": "Limanlarda Kalite",
+    "heroDesc": "Dünyanın en stratejik limanlarında denizcilik yakıtları, madeni yağ ve boya ikmali ile 7/24 operasyonel hız ve profesyonel lojistik çözümleri sunuyoruz.",
+    "viewServices": "Hizmetleri İncele"
+  },
+  "Footer": {
+    "desc": "Küresel denizcilik sektöründe güven, kalite ve hızı bir araya getiren vizyoner ikmal şirketi. Türkiye'nin stratejik limanlarından dünya okyanuslarına uzanan güçlü tedarik ağımızla hizmetinizdeyiz.",
+    "rights": "Tüm hakları saklıdır.",
+    "design": "Tasarım ve Geliştirme"
+  }
+}

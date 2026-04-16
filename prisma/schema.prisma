@@ -1,0 +1,94 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  name      String?
+  role      String   @default("ADMIN")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model PageContent {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  title       Json
+  content     Json
+  updatedAt   DateTime @updatedAt
+}
+
+model Service {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  title       Json
+  shortDesc   Json
+  content     Json
+  coverImage  String?
+  images      Image[]  @relation("ServiceImages")
+  orderIndex  Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Image {
+  id          String   @id @default(cuid())
+  url         String
+  publicId    String
+  altText     String?
+  orderIndex  Int      @default(0)
+  serviceId   String?
+  service     Service? @relation(fields: [serviceId], references: [id], name: "ServiceImages")
+  createdAt   DateTime @default(now())
+}
+
+model ContactMessage {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  phone     String?
+  company   String?
+  subject   String?
+  message   String
+  isRead    Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
+
+model CareerApplication {
+  id         String   @id @default(cuid())
+  fullName   String
+  email      String
+  phone      String
+  position   String
+  experience String?
+  message    String?
+  isRead     Boolean  @default(false)
+  createdAt  DateTime @default(now())
+}
+
+model Language {
+  id          String   @id @default(cuid())
+  code        String   @unique
+  name        String
+  flagIcon    String?
+  isActive    Boolean  @default(true)
+  isDefault   Boolean  @default(false)
+  orderIndex  Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model SiteSetting {
+  id          String   @id @default(cuid())
+  key         String   @unique
+  value       String   @db.Text
+  group       String   @default("general") // e.g., 'contact', 'social', 'appearance'
+  updatedAt   DateTime @updatedAt
+}

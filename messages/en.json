@@ -1,0 +1,32 @@
+{
+  "Navigation": {
+    "home": "Home",
+    "corporate": "Corporate",
+    "about": "About Us",
+    "sustainability": "Sustainability",
+    "careers": "Careers",
+    "references": "References",
+    "services": "Services",
+    "bunker": "Bunker Supply",
+    "lubricant": "Lubricant Supply",
+    "paint": "Marine Paints",
+    "agency": "Agency Services",
+    "tools": "Fleet & Equipment",
+    "media": "Media & Gallery",
+    "contact": "Contact",
+    "getQuote": "Get Quote",
+    "adminPanel": "Admin Panel"
+  },
+  "HomePage": {
+    "heroTop": "GLOBAL MARITIME SUPPLY",
+    "heroTitle1": "Trust on Oceans,",
+    "heroTitle2": "Quality at Ports",
+    "heroDesc": "We offer 7/24 operational speed and professional logistics solutions in marine fuels, lubricants, and paint supply across the world's most strategic ports.",
+    "viewServices": "View Services"
+  },
+  "Footer": {
+    "desc": "A visionary supply company bringing trust, quality, and speed to the global maritime industry. At your service with an extensive supply network extending from Turkey's strategic ports to the world's oceans.",
+    "rights": "All rights reserved.",
+    "design": "Design & Development"
+  }
+}
