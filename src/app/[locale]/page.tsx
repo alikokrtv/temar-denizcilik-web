@@ -5,6 +5,7 @@ import Image from "next/image";
 import React from "react";
 import { ArrowRight, Ship, Droplet, PaintBucket, Globe, Clock, ShieldCheck, Anchor, ChevronRight } from "lucide-react";
 import AnimatedCounter from '@/components/AnimatedCounter';
+import CapabilityGrid from '@/components/CapabilityGrid';
 import { useTranslations, useLocale } from 'next-intl';
 
 function ServiceCard({ item, locale }: { item: any, locale: string }) {
@@ -188,6 +189,9 @@ export default function Home() {
                     </div>
                 </div>
             </section>
+
+            {/* ===== CAPABILITIES ===== */}
+            <CapabilityGrid locale={locale} />
 
             {/* ===== WHY US ===== */}
             <section className="py-24 px-4 bg-white overflow-hidden">

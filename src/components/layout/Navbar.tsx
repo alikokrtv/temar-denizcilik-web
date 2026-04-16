@@ -79,15 +79,23 @@ export default function Navbar() {
             {/* MAIN NAVBAR */}
             <nav className={`sticky top-0 z-50 w-full transition-all duration-300 ${
                 scrolled
-                    ? 'bg-white shadow-[0_4px_30px_rgba(0,0,0,0.08)] border-b border-gray-100'
-                    : 'bg-white border-b border-gray-100'
+                    ? 'bg-white shadow-[0_4px_40px_rgba(0,0,0,0.08)] border-b border-slate-100'
+                    : 'bg-white border-b border-slate-100'
             }`}>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex justify-between items-center h-24 md:h-28">
+                    <div className={`flex justify-between items-center transition-all duration-300 ${
+                        scrolled ? 'h-20 md:h-24' : 'h-24 md:h-28'
+                    }`}>
                         {/* Logo */}
                         <div className="flex-shrink-0">
                             <Link href="/" className="transition-transform hover:scale-105 duration-300 block">
-                                <img src="/logo.png" alt="Temar Denizcilik Logo" className="h-24 md:h-32 lg:h-36 w-auto object-contain pb-1 scale-[1.15] md:scale-100 origin-left" />
+                                <img 
+                                    src="/logo.png" 
+                                    alt="Temar Denizcilik Logo" 
+                                    className={`transition-all duration-300 object-contain origin-left ${
+                                        scrolled ? 'h-16 md:h-20' : 'h-20 md:h-28'
+                                    }`} 
+                                />
                             </Link>
                         </div>
 
@@ -98,24 +106,24 @@ export default function Navbar() {
                                     <div key={link.name} className="relative group">
                                         <Link
                                             href={link.href}
-                                            className={`flex items-center gap-1 px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 ${
+                                            className={`flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-[0.95rem] font-bold transition-all duration-200 ${
                                                 pathname?.startsWith(link.href)
                                                     ? 'text-blue-600 bg-blue-50'
                                                     : 'text-slate-700 hover:text-blue-600 hover:bg-blue-50'
                                             }`}
                                         >
                                             {link.name}
-                                            <ChevronDown className="w-3.5 h-3.5 transition-transform duration-300 group-hover:rotate-180" />
+                                            <ChevronDown className="w-4 h-4 text-slate-400 transition-transform duration-300 group-hover:rotate-180" />
                                         </Link>
-                                        <div className="absolute top-full left-1/2 -translate-x-1/2 w-64 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 translate-y-1 group-hover:translate-y-0">
-                                            <div className="bg-white rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.12)] border border-gray-100 p-2">
+                                        <div className="absolute top-full left-1/2 -translate-x-1/2 w-64 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 translate-y-1 group-hover:translate-y-0 z-50">
+                                            <div className="bg-white rounded-[1.5rem] shadow-[0_20px_60px_rgba(0,0,0,0.12)] border border-slate-100 p-2">
                                                 {link.dropdown.map((item) => (
                                                     <Link
                                                         key={item.href}
                                                         href={item.href}
-                                                        className="flex items-center gap-2 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-600 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                                                        className="flex items-center gap-2.5 px-4 py-2.5 rounded-lg text-sm font-semibold text-slate-600 hover:bg-blue-50 hover:text-blue-600 transition-colors"
                                                     >
-                                                        <span className="w-1.5 h-1.5 bg-blue-300 rounded-full" />
+                                                        <span className="w-1.5 h-1.5 bg-blue-400 rounded-full" />
                                                         {item.name}
                                                     </Link>
                                                 ))}
@@ -126,7 +134,7 @@ export default function Navbar() {
                                     <Link
                                         key={link.name}
                                         href={link.href}
-                                        className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 ${
+                                        className={`px-4 py-2.5 rounded-xl text-[0.95rem] font-bold transition-all duration-200 ${
                                             pathname === link.href
                                                 ? 'text-blue-600 bg-blue-50'
                                                 : 'text-slate-700 hover:text-blue-600 hover:bg-blue-50'
@@ -139,13 +147,13 @@ export default function Navbar() {
                         </div>
 
                         {/* Right Side */}
-                        <div className="flex items-center gap-3">
+                        <div className="flex items-center gap-4">
                             <div className="hidden md:block">
-                                <LanguageDropdown />
+                                <LanguageDropdown scrolled={true} />
                             </div>
                             <Link
                                 href="/iletisim"
-                                className="hidden lg:flex items-center gap-2 px-6 py-2.5 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl transition-all hover:-translate-y-0.5 shadow-lg shadow-blue-500/25"
+                                className="hidden lg:flex items-center gap-2 px-8 py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-2xl transition-all hover:-translate-y-0.5 shadow-xl shadow-blue-500/20"
                             >
                                 {t('getQuote')} <ArrowRight className="w-4 h-4" />
                             </Link>
@@ -153,7 +161,7 @@ export default function Navbar() {
                             {/* Mobile Hamburger */}
                             <button
                                 onClick={() => setMobileOpen(true)}
-                                className="lg:hidden p-2 rounded-xl text-slate-700 hover:bg-slate-100 transition-colors"
+                                className="lg:hidden p-3 rounded-2xl text-slate-700 hover:bg-slate-100 transition-colors"
                             >
                                 <Menu className="w-6 h-6" />
                             </button>

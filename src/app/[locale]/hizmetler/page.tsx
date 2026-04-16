@@ -4,6 +4,8 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { Ship, Droplet, PaintBucket, Anchor, CheckCircle2, ArrowRight, ShieldCheck, Clock, Globe } from 'lucide-react';
 import ServiceCarousel from '@/components/ServiceCarousel';
+import TechSpecPanel from '@/components/TechSpecPanel';
+import ServiceWorkflow from '@/components/ServiceWorkflow';
 
 import { useLocale } from 'next-intl';
 
@@ -32,7 +34,13 @@ export default function ServicesPage() {
             ],
             details: locale === 'en'
                 ? 'We supply all kinds of marine fuel your ships need at any time of the day, under any conditions, with quality, reliable and competitive conditions. Our supply operations are carried out in accordance with the highest level of safety and environmental protection standards.'
-                : 'Günün her saatinde, her koşulda, gemilerinizin ihtiyacı olan her türlü denizcilik yakıtını kaliteli, güvenilir ve rekabetçi koşullarla tedarik ediyoruz. Tedarik operasyonlarımız, en üst düzey güvenlik ve çevre koruma standartlarına uygun olarak yürütülür.'
+                : 'Günün her saatinde, her koşulda, gemilerinizin ihtiyacı olan her türlü denizcilik yakıtını kaliteli, güvenilir ve rekabetçi koşullarla tedarik ediyoruz. Tedarik operasyonlarımız, en üst düzey güvenlik ve çevre koruma standartlarına uygun olarak yürütülür.',
+            specs: [
+                { label: "Compliance", value: "ISO 8217:2017" },
+                { label: "Sulfur Limit", value: "< 0.50% (VLSFO)" },
+                { label: "Viscosity", value: "Up to 380 cSt" },
+                { label: "Density", value: "Max 991 kg/m³" }
+            ]
         },
         {
             id: 'madeni-yag',
@@ -55,7 +63,13 @@ export default function ServicesPage() {
             ],
             details: locale === 'en'
                 ? 'By supplying the products of the world\'s leading lubricant manufacturers, we support your ships to operate longer and with higher performance. We provide solutions for all engine types, from single cylinder engines to the most complex systems.'
-                : 'Dünyanın önde gelen madeni yağ üreticilerinin ürünlerini tedarik ederek gemilerinizin daha uzun ömürlü ve performanslı çalışmasına destek oluyoruz. Tek silindirli makinelerden en karmaşık sistemlere kadar tüm motor tipleri için çözüm sağlıyoruz.'
+                : 'Dünyanın önde gelen madeni yağ üreticilerinin ürünlerini tedarik ederek gemilerinizin daha uzun ömürlü ve performanslı çalışmasına destek oluyoruz. Tek silindirli makinelerden en karmaşık sistemlere kadar tüm motor tipleri için çözüm sağlıyoruz.',
+            specs: [
+                { label: "Viscosity Index", value: "Min 95" },
+                { label: "Flash Point", value: "> 220°C" },
+                { label: "Base Number", value: "5 - 70 mg KOH/g" },
+                { label: "SAE Grades", value: "30, 40, 50" }
+            ]
         },
         {
             id: 'boya',
@@ -78,7 +92,13 @@ export default function ServicesPage() {
             ],
             details: locale === 'en'
                 ? 'We offer the most durable paint and coating systems to protect ship surfaces against harsh ocean conditions, salt water, and biological pollution. We stand by you at every stage, from emergency touch-ups during navigation to comprehensive dry-docking operations.'
-                : 'Gemi yüzeylerini zorlu okyanus şartlarına, tuzlu suya ve biyolojik kirliliğe karşı korumak için en dayanıklı boya ve kaplama sistemlerini sunuyoruz. Seyir esnasındaki acil rötuşlardan kapsamlı havuzlama operasyonlarına kadar her aşamada yanınızdayız.'
+                : 'Gemi yüzeylerini zorlu okyanus şartlarına, tuzlu suya ve biyolojik kirliliğe karşı korumak için en dayanıklı boya ve kaplama sistemlerini sunuyoruz. Seyir esnasındaki acil rötuşlardan kapsamlı havuzlama operasyonlarına kadar her aşamada yanınızdayız.',
+            specs: [
+                { label: "Antifouling", value: "Tin-Free (TBT-Free)" },
+                { label: "Durability", value: "Up to 60 Months" },
+                { label: "Application", value: "Spray / Roller" },
+                { label: "Corrosion Cat.", value: "C5-M (Marine)" }
+            ]
         },
         {
             id: 'liman',
@@ -101,8 +121,13 @@ export default function ServicesPage() {
             ],
             details: locale === 'en'
                 ? 'We know the cost of the time spent when the ship is at the port. For this reason, our port services are planned to minimize your ship\'s waiting time. We provide fully integrated service with our professional agency and logistics coordination.'
-                : 'Gemi limandayken geçen zamanın maliyetini biliyoruz. Bu nedenle liman hizmetlerimiz, geminizin bekleme süresini minimize edecek şekilde planlanmıştır. Profesyonel acentelik ve lojistik koordinasyonumuzla tam entegre hizmet veriyoruz.'
-        }
+                : 'Gemi limandayken geçen zamanın maliyetini biliyoruz. Bu nedenle liman hizmetlerimiz, geminizin bekleme süresini minimize edecek şekilde planlanmıştır. Profesyonel acentelik ve lojistik koordinasyonumuzla tam entegre hizmet veriyoruz.',
+            specs: [
+                { label: "Response", value: "24/7 Guaranteed" },
+                { label: "Coverage", value: "All Turkish Ports" },
+                { label: "Reporting", value: "Real-time Digital" },
+                { label: "Capacity", value: "Any Vessel Size" }
+            ]        }
     ];
 
     return (
@@ -150,14 +175,19 @@ export default function ServicesPage() {
                                         ))}
                                     </div>
                                     <Link href={`/iletisim?service=${service.id}`} className="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl transition-all shadow-lg hover:-translate-y-1">
-                                        {locale === 'en' ? 'Get a Quote' : 'Teklif Al'} <ArrowRight className="w-5 h-5" />
+                                        {locale === 'en' ? 'Request Official Quote' : 'Resmi Teklif Al'} <ArrowRight className="w-5 h-5" />
                                     </Link>
+
+                                    <TechSpecPanel title={service.title} specs={service.specs} locale={locale} />
                                 </div>
                             </div>
                         ))}
                     </div>
                 </div>
             </main>
+
+            {/* ===== SERVICE WORKFLOW ===== */}
+            <ServiceWorkflow locale={locale} />
 
 
             {/* ===== CTA ===== */}
