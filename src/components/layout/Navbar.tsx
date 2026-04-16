@@ -174,35 +174,44 @@ export default function Navbar() {
                     <div className="absolute right-0 top-0 h-full w-80 max-w-full bg-white shadow-2xl flex flex-col overflow-y-auto">
                         {/* Header */}
                         <div className="flex items-center justify-between p-5 border-b border-gray-100">
-                            <img src="/logo.png" alt="Temar" className="h-16 w-auto object-contain scale-110 origin-left" />
-                            <button onClick={() => setMobileOpen(false)} className="p-2 rounded-xl hover:bg-gray-100">
-                                <X className="w-5 h-5 text-slate-700" />
-                            </button>
+                            <img src="/logo.png" alt="Temar" className="w-36 h-auto object-contain" />
+                            <div className="flex items-center gap-2">
+                                <div className="scale-[0.85] origin-right">
+                                    <LanguageDropdown />
+                                </div>
+                                <button onClick={() => setMobileOpen(false)} className="p-2 rounded-xl hover:bg-gray-100 transition-colors">
+                                    <X className="w-6 h-6 text-slate-700" />
+                                </button>
+                            </div>
                         </div>
 
                         {/* Links */}
-                        <div className="flex-1 p-4">
+                        <div className="flex-1 p-4 space-y-1">
                             {navLinks.map((link) => (
                                 <div key={link.name}>
                                     <button
-                                        className="w-full flex items-center justify-between px-3 py-3 text-sm font-semibold text-slate-700 hover:text-blue-600 hover:bg-blue-50 rounded-xl transition-colors"
-                                        onClick={() => setOpenDropdown(openDropdown === link.name ? null : link.name)}
+                                        className="w-full flex items-center justify-between px-4 py-3.5 text-base font-bold text-slate-700 hover:text-blue-600 hover:bg-blue-50 rounded-xl transition-colors"
+                                        onClick={() => link.dropdown ? setOpenDropdown(openDropdown === link.name ? null : link.name) : window.location.assign(link.href)}
                                     >
-                                        {link.name}
+                                        {!link.dropdown ? (
+                                            <Link href={link.href} onClick={() => setMobileOpen(false)} className="w-full text-left">{link.name}</Link>
+                                        ) : (
+                                            <span className="w-full text-left">{link.name}</span>
+                                        )}
                                         {link.dropdown && (
-                                            <ChevronDown className={`w-4 h-4 transition-transform ${openDropdown === link.name ? 'rotate-180' : ''}`} />
+                                            <ChevronDown className={`w-5 h-5 transition-transform ${openDropdown === link.name ? 'rotate-180' : ''}`} />
                                         )}
                                     </button>
                                     {link.dropdown && openDropdown === link.name && (
-                                        <div className="pl-4 pb-2 space-y-1">
+                                        <div className="pl-6 pb-2 pt-1 space-y-1.5">
                                             {link.dropdown.map((item) => (
                                                 <Link
                                                     key={item.href}
                                                     href={item.href}
                                                     onClick={() => setMobileOpen(false)}
-                                                    className="flex items-center gap-2 px-3 py-2 text-sm text-slate-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+                                                    className="flex items-center gap-3 px-4 py-2.5 text-[0.95rem] font-medium text-slate-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
                                                 >
-                                                    <span className="w-1.5 h-1.5 bg-blue-300 rounded-full" />
+                                                    <span className="w-1.5 h-1.5 bg-blue-400 rounded-full" />
                                                     {item.name}
                                                 </Link>
                                             ))}
