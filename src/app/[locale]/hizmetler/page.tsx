@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { Ship, Droplet, PaintBucket, Anchor, CheckCircle2, ArrowRight, ShieldCheck, Clock, Globe } from 'lucide-react';
 import ServiceCarousel from '@/components/ServiceCarousel';
+import InteractiveMap from '@/components/InteractiveMap';
 
 import { useLocale } from 'next-intl';
 
@@ -155,8 +156,15 @@ export default function ServicesPage() {
                         </div>
                     ))}
                 </div>
+            </div>
+        </main>
 
-                <div className="mt-24 bg-[#0a192f] rounded-[3rem] p-12 text-center text-white relative overflow-hidden">
+        {/* ===== Interactive Map ===== */}
+        <InteractiveMap locale={locale} />
+
+        <main className="bg-slate-50 px-4 pb-20">
+            <div className="max-w-7xl mx-auto">
+                <div className="bg-[#0a192f] rounded-[3rem] p-12 text-center text-white relative overflow-hidden">
                     <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/20 blur-[100px] rounded-full"></div>
                     <div className="absolute bottom-0 left-0 w-64 h-64 bg-cyan-500/20 blur-[100px] rounded-full"></div>
                     
