@@ -14,7 +14,8 @@ export default function ServicesPage() {
         {
             id: 'ikmal',
             icon: Ship,
-            title: locale === 'en' ? 'Bunker Supply Solutions' : 'Denizcilik İkmal Çözümler            desc: locale === 'en' 
+            title: locale === 'en' ? 'Bunker Supply Solutions' : 'Denizcilik İkmal Çözümleri',
+            desc: locale === 'en' 
                 ? 'We provide reliable and uninterrupted fuel supply services at international standards with our wide product network in all Turkish ports, shipyards, and anchorages.'
                 : 'Tüm Türk limanları, tersane ve demirleme sahalarında geniş ürün ağımızla, uluslararası standartlarda güvenilir ve kesintisiz yakıt tedarik hizmeti sunuyoruz.',
             images: ['/temar-ikmal-trucks.png', '/Bunker Fuel.png', '/yacht.jpg.png'],
@@ -86,8 +87,7 @@ export default function ServicesPage() {
             desc: locale === 'en'
                 ? 'All kinds of logistics, technical and operational support required by ships during their port stays.'
                 : 'Gemilerin liman konaklamaları süresince ihtiyaç duyduğu her türlü lojistik, teknik ve operasyonel destek.',
-            images: ['/barge-map.png', '/Bunker Fuel.png', '/temar-ikmal-trucks.png'],ilerin liman konaklamaları süresince ihtiyaç duyduğu her türlü lojistik, teknik ve operasyonel destek.',
-            image: '/barge-map.png',
+            images: ['/barge-map.png', '/Bunker Fuel.png', '/temar-ikmal-trucks.png'],
             features: locale === 'en' ? [
                 'Document and customs tracking',
                 'Spare parts logistics',
