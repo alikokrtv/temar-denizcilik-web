@@ -142,8 +142,12 @@ export default function Footer() {
 
                 {/* Bottom Bar */}
                 <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-                    <div className="text-slate-500 text-sm mb-4 md:mb-0">
-                        © {new Date().getFullYear()} Temar Denizcilik. {t('Footer.rights')}
+                    <div className="text-slate-500 text-sm mb-4 md:mb-0 flex items-center gap-3">
+                        <span>© {new Date().getFullYear()} Temar Denizcilik. {t('Footer.rights')}</span>
+                        <span className="text-slate-800">|</span>
+                        <Link href="/admin/login" className="text-slate-600 hover:text-slate-400 transition-colors text-xs font-semibold">
+                            Admin Portallar
+                        </Link>
                     </div>
                     <div className="flex items-center gap-2 mt-4 md:mt-0">
                         <span className="text-slate-600 text-xs">{t('Footer.design')}:</span>
