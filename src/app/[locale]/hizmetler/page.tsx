@@ -88,7 +88,7 @@ export default function ServicesPage() {
             desc: locale === 'en'
                 ? 'All kinds of logistics, technical and operational support required by ships during their port stays.'
                 : 'Gemilerin liman konaklamaları süresince ihtiyaç duyduğu her türlü lojistik, teknik ve operasyonel destek.',
-            images: ['/barge-map.png', '/Bunker Fuel.png', '/temar-ikmal-trucks.png'],
+            images: ['/Bunker Fuel.png', '/temar-ikmal-trucks.png'],
             features: locale === 'en' ? [
                 'Document and customs tracking',
                 'Spare parts logistics',
@@ -129,10 +129,16 @@ export default function ServicesPage() {
                         {services.map((service, index) => (
                             <div key={service.id} id={service.id} className={`flex flex-col lg:flex-row gap-12 items-center scroll-mt-32 ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
                                 <div className="w-full lg:w-1/2 relative group">
-                                    <ServiceCarousel images={service.images} />
-                                    <div className="absolute top-4 right-4 w-12 h-12 rounded-2xl bg-white/90 backdrop-blur-md flex items-center justify-center text-blue-600 shadow-xl z-20">
-                                        <service.icon className="w-6 h-6" />
-                                    </div>
+                                    {service.id === 'liman' ? (
+                                        <InteractiveMap locale={locale} compact />
+                                    ) : (
+                                        <>
+                                            <ServiceCarousel images={service.images} />
+                                            <div className="absolute top-4 right-4 w-12 h-12 rounded-2xl bg-white/90 backdrop-blur-md flex items-center justify-center text-blue-600 shadow-xl z-20">
+                                                <service.icon className="w-6 h-6" />
+                                            </div>
+                                        </>
+                                    )}
                                 </div>
                                 <div className="w-full lg:w-1/2">
                                     <h2 className="text-3xl lg:text-4xl font-black text-slate-900 mb-4">{service.title}</h2>
