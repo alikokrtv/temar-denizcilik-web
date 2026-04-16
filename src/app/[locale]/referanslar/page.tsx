@@ -95,7 +95,6 @@ export default function ReferencesPage() {
                         </p>
                         <div>
                             <p className="font-bold text-lg">{locale === 'en' ? 'International Fleet Manager' : 'Uluslararası Filo Yöneticisi'}</p>
-                            <p className="text-blue-400">{locale === 'en' ? 'Global Maritime Logistics' : 'Global D. Lojistik'}</p>
                         </div>
                     </div>
                     <div className="w-full md:w-1/2 relative z-10">
