@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { Ship, Droplet, PaintBucket, Anchor, CheckCircle2, ArrowRight, ShieldCheck, Clock, Globe } from 'lucide-react';
+import ServiceCarousel from '@/components/ServiceCarousel';
 
 import { useLocale } from 'next-intl';
 
@@ -13,11 +14,10 @@ export default function ServicesPage() {
         {
             id: 'ikmal',
             icon: Ship,
-            title: locale === 'en' ? 'Bunker Supply Solutions' : 'Denizcilik İkmal Çözümleri',
-            desc: locale === 'en' 
+            title: locale === 'en' ? 'Bunker Supply Solutions' : 'Denizcilik İkmal Çözümler            desc: locale === 'en' 
                 ? 'We provide reliable and uninterrupted fuel supply services at international standards with our wide product network in all Turkish ports, shipyards, and anchorages.'
                 : 'Tüm Türk limanları, tersane ve demirleme sahalarında geniş ürün ağımızla, uluslararası standartlarda güvenilir ve kesintisiz yakıt tedarik hizmeti sunuyoruz.',
-            image: '/temar-ikmal-trucks.png',
+            images: ['/temar-ikmal-trucks.png', '/Bunker Fuel.png', '/yacht.jpg.png'],
             features: locale === 'en' ? [
                 'Fast and reliable supply',
                 'Certified fuel solutions',
@@ -40,7 +40,7 @@ export default function ServicesPage() {
             desc: locale === 'en'
                 ? 'Premium quality lubricants developed for main engines, systems and marine engines, supporting operational continuity and ship engine efficiency.'
                 : 'Ana makine, sistem ve deniz motorları için geliştirilmiş, operasyonel sürekliliği ve gemi motor verimliliğini destekleyen üstün kaliteli madeni yağlar.',
-            image: '/yatch5.png',
+            images: ['/yatch5.png', '/temar-ikmal-trucks.png', '/barge-map.png'],
             features: locale === 'en' ? [
                 'Oils providing superior performance',
                 'Extended engine life',
@@ -63,7 +63,7 @@ export default function ServicesPage() {
             desc: locale === 'en'
                 ? 'High-level corrosion-resistant marine paints and stock coating solutions needed during navigation at international standards.'
                 : 'Uluslararası standartlarda üst düzey korozyon dirençli denizcilik boyaları ve seyir esnasında ihtiyaç duyulan stok kaplama çözümleri.',
-            image: '/Bunker%20Fuel.png',
+            images: ['/Bunker Fuel.png', '/yatch5.png', '/yacht.jpg.png'],
             features: locale === 'en' ? [
                 'High corrosion resistance',
                 'Toxic/non-toxic underwater paints',
@@ -86,6 +86,7 @@ export default function ServicesPage() {
             desc: locale === 'en'
                 ? 'All kinds of logistics, technical and operational support required by ships during their port stays.'
                 : 'Gemilerin liman konaklamaları süresince ihtiyaç duyduğu her türlü lojistik, teknik ve operasyonel destek.',
+            images: ['/barge-map.png', '/Bunker Fuel.png', '/temar-ikmal-trucks.png'],ilerin liman konaklamaları süresince ihtiyaç duyduğu her türlü lojistik, teknik ve operasyonel destek.',
             image: '/barge-map.png',
             features: locale === 'en' ? [
                 'Document and customs tracking',
@@ -125,11 +126,10 @@ export default function ServicesPage() {
                 <div className="space-y-20">
                     {services.map((service, index) => (
                         <div key={service.id} id={service.id} className={`flex flex-col lg:flex-row gap-12 items-center scroll-mt-32 ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
-                            <div className="w-full lg:w-1/2 relative group rounded-[2.5rem] overflow-hidden shadow-xl border border-slate-100 bg-white">
-                                <img src={service.image} alt={service.title} className="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-105" />
-                                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
-                                <div className="absolute bottom-6 left-6 w-16 h-16 rounded-2xl bg-white flex items-center justify-center text-blue-600 shadow-lg">
-                                    <service.icon className="w-8 h-8" />
+                            <div className="w-full lg:w-1/2 relative group">
+                                <ServiceCarousel images={service.images} />
+                                <div className="absolute top-4 right-4 w-12 h-12 rounded-2xl bg-white/90 backdrop-blur-md flex items-center justify-center text-blue-600 shadow-xl z-20">
+                                    <service.icon className="w-6 h-6" />
                                 </div>
                             </div>
                             <div className="w-full lg:w-1/2">
