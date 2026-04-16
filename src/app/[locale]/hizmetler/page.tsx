@@ -124,7 +124,7 @@ export default function ServicesPage() {
 
                 <div className="space-y-20">
                     {services.map((service, index) => (
-                        <div key={service.id} id={service.id} className={`flex flex-col lg:flex-row gap-12 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
+                        <div key={service.id} id={service.id} className={`flex flex-col lg:flex-row gap-12 items-center scroll-mt-32 ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
                             <div className="w-full lg:w-1/2 relative group rounded-[2.5rem] overflow-hidden shadow-xl border border-slate-100 bg-white">
                                 <img src={service.image} alt={service.title} className="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-105" />
                                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
