@@ -83,11 +83,11 @@ export default function Navbar() {
                     : 'bg-white border-b border-gray-100'
             }`}>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex justify-between items-center h-20 md:h-24">
+                    <div className="flex justify-between items-center h-24 md:h-28">
                         {/* Logo */}
                         <div className="flex-shrink-0">
                             <Link href="/" className="transition-transform hover:scale-105 duration-300 block">
-                                <img src="/logo.png" alt="Temar Denizcilik Logo" className="h-20 md:h-28 lg:h-32 w-auto object-contain py-2" />
+                                <img src="/logo.png" alt="Temar Denizcilik Logo" className="h-24 md:h-32 lg:h-36 w-auto object-contain pb-1 scale-[1.15] md:scale-100 origin-left" />
                             </Link>
                         </div>
 
@@ -174,7 +174,7 @@ export default function Navbar() {
                     <div className="absolute right-0 top-0 h-full w-80 max-w-full bg-white shadow-2xl flex flex-col overflow-y-auto">
                         {/* Header */}
                         <div className="flex items-center justify-between p-5 border-b border-gray-100">
-                            <img src="/logo.png" alt="Temar" className="h-10 w-auto object-contain" />
+                            <img src="/logo.png" alt="Temar" className="h-16 w-auto object-contain scale-110 origin-left" />
                             <button onClick={() => setMobileOpen(false)} className="p-2 rounded-xl hover:bg-gray-100">
                                 <X className="w-5 h-5 text-slate-700" />
                             </button>
