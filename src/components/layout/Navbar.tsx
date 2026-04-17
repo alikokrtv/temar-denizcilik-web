@@ -153,7 +153,7 @@ export default function Navbar() {
                         {/* Right Side */}
                         <div className="flex items-center gap-4">
                             <div className="hidden md:block">
-                                <LanguageDropdown scrolled={true} />
+                                <LanguageDropdown />
                             </div>
                             <Link
                                 href="/iletisim"
