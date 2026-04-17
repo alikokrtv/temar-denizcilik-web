@@ -63,7 +63,7 @@ export default function Home() {
     const locale = useLocale();
     const [mounted, setMounted] = React.useState(false);
     const [heroData, setHeroData] = React.useState({
-        mediaUrl: "/Bunker Fuel.png",
+        mediaUrl: "/images/services/fuel/fuel-2.jpg",
     });
 
     const statsData = [
@@ -156,7 +156,7 @@ export default function Home() {
                             {
                                 id: "ikmal",
                                 title: locale === 'en' ? "Bunker Supply" : "Denizcilik İkmal",
-                                img: "/temar-ikmal-trucks.png",
+                                img: "/images/services/fuel/fuel-4.jpg",
                                 icon: Ship,
                                 desc: locale === 'en' 
                                     ? "Reliable fuel supply service at international standards with our wide product network in all ports and anchorages."
@@ -166,7 +166,7 @@ export default function Home() {
                             {
                                 id: "madeni-yag",
                                 title: locale === 'en' ? "Lubricant Supply" : "Madeni Yağ İkmali",
-                                img: "/yatch5.png",
+                                img: "/images/services/lubricants/lub-4.jpg",
                                 icon: Droplet,
                                 desc: locale === 'en'
                                     ? "Premium quality lubricant solutions supporting operational continuity and engine efficiency."
@@ -176,7 +176,7 @@ export default function Home() {
                             {
                                 id: "boya",
                                 title: locale === 'en' ? "Marine Paints" : "Denizcilik Boyaları",
-                                img: "/Bunker%20Fuel.png",
+                                img: "/images/services/paint/paint-5.jpg",
                                 icon: PaintBucket,
                                 desc: locale === 'en'
                                     ? "High-level corrosion resistant marine paints and stock coating solutions needed during navigation."
@@ -198,7 +198,7 @@ export default function Home() {
                 <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
                     <div className="w-full lg:w-1/2 relative">
                         <div className="rounded-[2.5rem] overflow-hidden shadow-2xl relative z-10">
-                            <img src="/Bunker Fuel.png" alt="Temar Denizcilik" className="w-full h-[600px] object-cover" />
+                            <img src="/images/brand/brand-8.png" alt="Temar Denizcilik" className="w-full h-[600px] object-cover" />
                         </div>
                         <div className="absolute -top-10 -right-10 w-64 h-64 bg-blue-50 rounded-full blur-3xl -z-10" />
                         <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-cyan-50 rounded-full blur-3xl -z-10" />

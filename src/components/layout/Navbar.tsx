@@ -17,9 +17,9 @@ export default function Navbar() {
             name: t('corporate'),
             href: '/hakkimizda',
             dropdown: [
-                { name: t('about'), href: '/hakkimizda' },
-                { name: 'Misyon & Vizyon', href: '/hakkimizda#misyon-vizyon' },
+                { name: 'Biz Kimiz?', href: '/hakkimizda' },
                 { name: 'Tarihçemiz', href: '/hakkimizda#tarihcemiz' },
+                { name: 'Hizmet Bölgelerimiz', href: '/hakkimizda#bolgeler' },
                 { name: t('sustainability'), href: '/surdurulebilirlik' },
                 { name: 'Kalite Politikamız', href: '/kalite' },
                 { name: t('careers'), href: '/kariyer' },
@@ -40,38 +40,42 @@ export default function Navbar() {
         { name: t('contact'), href: '/iletisim' },
     ];
 
-    if (pathname?.startsWith('/admin')) return null;
-
     useEffect(() => {
         const handleScroll = () => setScrolled(window.scrollY > 20);
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    if (pathname?.startsWith('/admin')) return null;
+
     return (
         <>
-            {/* TOP INFO BAR */}
-            <div className="hidden md:block w-full bg-[#0a192f] text-white py-2 px-4">
-                <div className="max-w-7xl mx-auto flex justify-between items-center text-xs">
+            {/* TOP INFO BAR - RESTORED CLASSIC DESIGN */}
+            <div className="hidden md:block w-full bg-[#082855] text-white py-2.5 px-4">
+                <div className="max-w-7xl mx-auto flex justify-between items-center text-[0.8rem] font-medium tracking-tight">
                     <div className="flex items-center gap-6">
-                        <a href="tel:+902165820052" className="flex items-center gap-1.5 text-blue-300 hover:text-white transition-colors">
-                            <Phone className="w-3 h-3" />
+                        <a href="tel:+902165820052" className="flex items-center gap-2 hover:text-blue-200 transition-colors">
+                            <Phone className="w-3.5 h-3.5" />
                             +90 216 582 00 52
                         </a>
-                        <a href="mailto:info@temar.com" className="flex items-center gap-1.5 text-blue-300 hover:text-white transition-colors">
-                            <Mail className="w-3 h-3" />
+                        <a href="mailto:info@temar.com" className="flex items-center gap-2 hover:text-blue-200 transition-colors">
+                            <Mail className="w-3.5 h-3.5" />
                             info@temar.com
                         </a>
                     </div>
-                    <div className="flex items-center gap-4 text-blue-300">
-                        <span>7/24 Kesintisiz Operasyon</span>
-                        <span>·</span>
-                        <a href="https://www.instagram.com/temardenizcilik/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
-                            <Instagram className="w-3.5 h-3.5" />
-                        </a>
-                        <a href="https://www.linkedin.com/company/temar-denizcilik/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
-                            <Linkedin className="w-3.5 h-3.5" />
-                        </a>
+                    <div className="flex items-center gap-6">
+                        <div className="flex items-center gap-3">
+                            <span className="opacity-80">7/24 Kesintisiz Operasyon</span>
+                            <span className="w-1 h-1 bg-blue-400 rounded-full" />
+                            <div className="flex items-center gap-3">
+                                <a href="https://www.instagram.com/temardenizcilik/" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform">
+                                    <Instagram className="w-4 h-4" />
+                                </a>
+                                <a href="https://www.linkedin.com/company/temar-denizcilik/" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform">
+                                    <Linkedin className="w-4 h-4" />
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

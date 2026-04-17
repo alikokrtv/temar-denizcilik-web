@@ -2,15 +2,11 @@
 
 import React from 'react';
 import { MessageCircle } from 'lucide-react';
-import { usePathname } from 'next/navigation';
 
 const WhatsAppButton = () => {
-  const pathname = usePathname();
   const phoneNumber = "905367779651";
   const message = "Merhaba, bilgi alabilir miyim?";
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-
-  if (pathname?.startsWith('/admin')) return null;
 
   return (
     <a
@@ -44,4 +40,3 @@ const WhatsAppButton = () => {
 };
 
 export default WhatsAppButton;
-

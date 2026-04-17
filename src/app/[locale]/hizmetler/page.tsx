@@ -14,32 +14,41 @@ export default function ServicesPage() {
 
     const services = [
         {
-            id: 'ikmal',
+            id: 'yakit',
             icon: Ship,
-            title: locale === 'en' ? 'Bunker Supply Solutions' : 'Denizcilik İkmal Çözümleri',
+            title: locale === 'en' ? 'Bunker Fuel Solutions' : 'Bunker Yakıt Çözümleri',
             desc: locale === 'en' 
-                ? 'We provide reliable and uninterrupted fuel supply services at international standards with our wide product network in all Turkish ports, shipyards, and anchorages.'
-                : 'Tüm Türk limanları, tersane ve demirleme sahalarında geniş ürün ağımızla, uluslararası standartlarda güvenilir ve kesintisiz yakıt tedarik hizmeti sunuyoruz.',
-            images: ['/temar-ikmal-trucks.png', '/Bunker Fuel.png', '/yacht.jpg.png'],
+                ? 'Kara tankerleri ve yüksek kapasiteli barge filomuzla operasyonel mükemmelliği hedefliyoruz; DMA, MGO, VLSFO, AGO ve LSMGO ürün gruplarında kesintisiz enerji sağlıyoruz.'
+                : 'Kara tankerleri ve yüksek kapasiteli barge filomuzla operasyonel mükemmelliği hedefliyoruz; DMA, MGO, VLSFO, AGO ve LSMGO ürün gruplarında kesintisiz enerji sağlıyoruz.',
+            images: [
+                '/images/services/fuel/fuel-1.jpg',
+                '/images/services/fuel/fuel-2.jpg',
+                '/images/services/fuel/fuel-3.jpg',
+                '/images/services/fuel/fuel-4.jpg',
+                '/images/services/fuel/fuel-5.jpg',
+                '/images/services/fuel/fuel-6.jpg',
+                '/images/services/fuel/fuel-7.jpg',
+                '/images/services/fuel/fuel-8.jpg',
+            ],
             features: locale === 'en' ? [
-                'Fast and reliable supply',
-                'Certified fuel solutions',
-                'Full compliance with ISO standards',
-                'Supply support at anchorages'
+                'Fast and reliable barge supply',
+                'DMA, MGO, VLSFO, LSMGO range',
+                'International inspection standards',
+                '7/24 coverage in all Turkish ports'
             ] : [
-                'Hızlı ve güvenilir tedarik',
-                'Sertifikalı yakıt çözümleri',
-                'ISO standartlarına tam uyum',
-                'Demirleme sahalarında ikmal desteği'
+                'Hızlı ve güvenilir barge ikmali',
+                'DMA, MGO, VLSFO, LSMGO ürün gamı',
+                'Uluslararası gözetim standartları',
+                'Tüm Türk limanlarında 7/24 hizmet'
             ],
             details: locale === 'en'
-                ? 'We supply all kinds of marine fuel your ships need at any time of the day, under any conditions, with quality, reliable and competitive conditions. Our supply operations are carried out in accordance with the highest level of safety and environmental protection standards.'
-                : 'Günün her saatinde, her koşulda, gemilerinizin ihtiyacı olan her türlü denizcilik yakıtını kaliteli, güvenilir ve rekabetçi koşullarla tedarik ediyoruz. Tedarik operasyonlarımız, en üst düzey güvenlik ve çevre koruma standartlarına uygun olarak yürütülür.',
+                ? 'Under the ICON brand vision, we offer flexible supply models and strategic solutions. Our supply operations are carried out under independent international supervision firm with the highest security and transparency.'
+                : 'Operasyonel Yetkinlik ve Güven vizyonuyla, esnek tedarik modelleri ve stratejik çözümler üretiyoruz. İkmal süreçlerimiz bağımsız uluslararası gözetim firmalarının denetiminde, en yüksek emniyet ve şeffaflık standartlarında gerçekleştirilir.',
             specs: [
                 { label: "Compliance", value: "ISO 8217:2017" },
-                { label: "Sulfur Limit", value: "< 0.50% (VLSFO)" },
-                { label: "Viscosity", value: "Up to 380 cSt" },
-                { label: "Density", value: "Max 991 kg/m³" }
+                { label: "Products", value: "VLSFO, MGO, AGO" },
+                { label: "Inspection", value: "SGS / Intertek" },
+                { label: "Delivery", value: "Barge & Truck" }
             ]
         },
         {
@@ -47,28 +56,36 @@ export default function ServicesPage() {
             icon: Droplet,
             title: locale === 'en' ? 'Lubricant Sales and Supply' : 'Madeni Yağ Satışı ve İkmali',
             desc: locale === 'en'
-                ? 'Premium quality lubricants developed for main engines, systems and marine engines, supporting operational continuity and ship engine efficiency.'
-                : 'Ana makine, sistem ve deniz motorları için geliştirilmiş, operasyonel sürekliliği ve gemi motor verimliliğini destekleyen üstün kaliteli madeni yağlar.',
-            images: ['/yatch5.png', '/temar-ikmal-trucks.png', '/barge-map.png'],
+                ? 'Ana makine, silindir-sistem ve tüm yardımcı makineler için yüksek performanslı madeni yağ ikmallerini gerçekleştiriyoruz.'
+                : 'Ana makine, silindir-sistem ve tüm yardımcı makineler için yüksek performanslı madeni yağ ikmallerini gerçekleştiriyoruz.',
+            images: [
+                '/images/services/lubricants/lub-1.jpg',
+                '/images/services/lubricants/lub-2.jpg',
+                '/images/services/lubricants/lub-3.jpg',
+                '/images/services/lubricants/lub-4.jpg',
+                '/images/services/lubricants/lub-5.jpg',
+                '/images/services/lubricants/lub-6.jpg',
+                '/images/services/lubricants/lub-7.jpg',
+            ],
             features: locale === 'en' ? [
-                'Oils providing superior performance',
-                'Extended engine life',
-                'Collaboration with global premium brands',
-                'Special delivery options with barge'
+                'Transit and Domestic delivery',
+                'High viscosity greases',
+                'Laboratory analysis support',
+                'Global logistics network'
             ] : [
-                'Üstün performans sağlayan yağlar',
-                'Uzatılmış motor ömrü',
-                'Küresel premium markalarla işbirliği',
-                'Barge ile özel teslimat seçenekleri'
+                'Transit ve Yerli teslimat seçenekleri',
+                'Yüksek ısıl dirençli gresler',
+                'Laboratuvar analiz desteği',
+                'Geniş lojistik ve dağıtım ağı'
             ],
             details: locale === 'en'
-                ? 'By supplying the products of the world\'s leading lubricant manufacturers, we support your ships to operate longer and with higher performance. We provide solutions for all engine types, from single cylinder engines to the most complex systems.'
-                : 'Dünyanın önde gelen madeni yağ üreticilerinin ürünlerini tedarik ederek gemilerinizin daha uzun ömürlü ve performanslı çalışmasına destek oluyoruz. Tek silindirli makinelerden en karmaşık sistemlere kadar tüm motor tipleri için çözüm sağlıyoruz.',
+                ? 'We ensure operational continuity and motor efficiency by supplying premium lubricants. From silinder systems to hydraulic oils, we provide solutions for every engine type with technical expertise.'
+                : 'Ağır hizmet tipi deniz motorları için özel geliştirilmiş ürünlerle ekipman ömrünü uzatıyoruz. Silindir, Hidrolik, Dişli yağlarından yüksek ısıl dirençli greslere kadar zengin portföyümüzle uzman mühendislik desteği sağlıyoruz.',
             specs: [
-                { label: "Viscosity Index", value: "Min 95" },
-                { label: "Flash Point", value: "> 220°C" },
-                { label: "Base Number", value: "5 - 70 mg KOH/g" },
-                { label: "SAE Grades", value: "30, 40, 50" }
+                { label: "Grades", value: "SAE 30, 40, 50" },
+                { label: "Analyses", value: "Detailed Lab Support" },
+                { label: "Brands", value: "Global Premium" },
+                { label: "Delivery", value: "Door-to-Deck" }
             ]
         },
         {
@@ -76,28 +93,37 @@ export default function ServicesPage() {
             icon: PaintBucket,
             title: locale === 'en' ? 'Marine Paints' : 'Denizcilik Boyaları',
             desc: locale === 'en'
-                ? 'High-level corrosion-resistant marine paints and stock coating solutions needed during navigation at international standards.'
-                : 'Uluslararası standartlarda üst düzey korozyon dirençli denizcilik boyaları ve seyir esnasında ihtiyaç duyulan stok kaplama çözümleri.',
-            images: ['/Bunker Fuel.png', '/yatch5.png', '/yacht.jpg.png'],
+                ? 'Tersanelerdeki yeni inşa projelerinden zorlu tamir-bakım süreçlerine kadar gemilerinizin fiziki bütünlüğünü koruyan üst düzey korozyon dirençli boyalar.'
+                : 'Tersanelerdeki yeni inşa projelerinden zorlu tamir-bakım süreçlerine kadar gemilerinizin fiziki bütünlüğünü koruyan üst düzey korozyon dirençli boyalar.',
+            images: [
+                '/images/services/paint/paint-1.jpg',
+                '/images/services/paint/paint-2.jpg',
+                '/images/services/paint/paint-3.jpg',
+                '/images/services/paint/paint-4.jpg',
+                '/images/services/paint/paint-5.jpg',
+                '/images/services/paint/paint-6.jpg',
+                '/images/services/paint/paint-7.jpg',
+                '/images/services/paint/paint-8.jpg',
+            ],
             features: locale === 'en' ? [
+                'NACE/FROSIO Inspector support',
+                'SeaStock availability',
                 'High corrosion resistance',
-                'Toxic/non-toxic underwater paints',
-                'Long-term protection',
-                'Special expertise for shipyard applications'
+                'Technical condition analysis'
             ] : [
+                'NACE/FROSIO Enspektör desteği',
+                'SeaStock (Seyir Stoğu) ikmali',
                 'Yüksek korozyon direnci',
-                'Zehirli/zehirsiz sualtı boyaları',
-                'Uzun süreli koruma',
-                'Tersane uygulamaları için özel uzmanlık'
+                'Yüzey kondisyon analizi'
             ],
             details: locale === 'en'
-                ? 'We offer the most durable paint and coating systems to protect ship surfaces against harsh ocean conditions, salt water, and biological pollution. We stand by you at every stage, from emergency touch-ups during navigation to comprehensive dry-docking operations.'
-                : 'Gemi yüzeylerini zorlu okyanus şartlarına, tuzlu suya ve biyolojik kirliliğe karşı korumak için en dayanıklı boya ve kaplama sistemlerini sunuyoruz. Seyir esnasındaki acil rötuşlardan kapsamlı havuzlama operasyonlarına kadar her aşamada yanınızdayız.',
+                ? 'We supply marine paints at international standards. Our NACE/FROSIO certified experts guide your vessel and analyze surface conditions to issue quality certificates.'
+                : 'Uluslararası standartlarda tedarik ettiğimiz boyalarla gemi yüzeylerini koruma altına alıyoruz. Uzman enspektörlerimiz (NACE/FROSIO) geminizi yönlendirir, yüzey kondisyonunu analiz eder ve uluslararası geçerliliğe sahip raporlar sunar.',
             specs: [
-                { label: "Antifouling", value: "Tin-Free (TBT-Free)" },
-                { label: "Durability", value: "Up to 60 Months" },
-                { label: "Application", value: "Spray / Roller" },
-                { label: "Corrosion Cat.", value: "C5-M (Marine)" }
+                { label: "Inspector", value: "NACE / FROSIO" },
+                { label: "Stock", value: "SeaStock Available" },
+                { label: "Types", value: "Epoxy, Polyurethane" },
+                { label: "Standard", value: "ISO 12944" }
             ]
         },
         {
@@ -105,29 +131,30 @@ export default function ServicesPage() {
             icon: Anchor,
             title: locale === 'en' ? 'Port Services' : 'Liman Hizmetleri',
             desc: locale === 'en'
-                ? 'All kinds of logistics, technical and operational support required by ships during their port stays.'
+                ? 'Gemilerin liman konaklamaları süresince ihtiyaç duyduğu her türlü lojistik, teknik ve operasyonel destek.'
                 : 'Gemilerin liman konaklamaları süresince ihtiyaç duyduğu her türlü lojistik, teknik ve operasyonel destek.',
-            images: ['/barge-map.png', '/Bunker Fuel.png', '/temar-ikmal-trucks.png'],
+            images: ['/barge-map.png'],
             features: locale === 'en' ? [
-                'Document and customs tracking',
+                '24/7 Guaranteed response',
+                'All Turkish Ports covered',
                 'Spare parts logistics',
-                'Provisions and material supply',
-                'Waste reception coordination'
+                'Customs and docs tracking'
             ] : [
-                'Evrak ve gümrük süreçleri takibi',
+                '7/24 Kesintisiz hizmet güvencesi',
+                'Tüm Türk limanlarında kapsam',
                 'Yedek parça lojistiği',
-                'Kumanya ve malzeme tedariği',
-                'Atık alım koordinasyonu'
+                'Gümrük ve evrak süreç takibi'
             ],
             details: locale === 'en'
-                ? 'We know the cost of the time spent when the ship is at the port. For this reason, our port services are planned to minimize your ship\'s waiting time. We provide fully integrated service with our professional agency and logistics coordination.'
-                : 'Gemi limandayken geçen zamanın maliyetini biliyoruz. Bu nedenle liman hizmetlerimiz, geminizin bekleme süresini minimize edecek şekilde planlanmıştır. Profesyonel acentelik ve lojistik koordinasyonumuzla tam entegre hizmet veriyoruz.',
+                ? 'We minimize port stay duration through professional coordination. Our team provides integrated agency and logistics support for any vessel size in any Turkish port.'
+                : 'Gemi limandayken geçen zamanın maliyetini biliyoruz. Bu nedenle liman hizmetlerimiz, geminizin bekleme süresini minimize edecek şekilde profesyonel acentelik ve lojistik koordinasyonumuzla planlanmıştır.',
             specs: [
-                { label: "Response", value: "24/7 Guaranteed" },
-                { label: "Coverage", value: "All Turkish Ports" },
-                { label: "Reporting", value: "Real-time Digital" },
-                { label: "Capacity", value: "Any Vessel Size" }
-            ]        }
+                { label: "Availability", value: "7/24 Active" },
+                { label: "Ports", value: "All TR Ports" },
+                { label: "Agency", value: "Full Integrated" },
+                { label: "Coordination", value: "Real-time Tracking" }
+            ]
+        }
     ];
 
     return (

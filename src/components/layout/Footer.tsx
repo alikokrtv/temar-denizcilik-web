@@ -1,6 +1,6 @@
 "use client";
 import { Link, usePathname } from '@/i18n/routing';
-import { Instagram, Linkedin, MapPin, Phone, Mail, Ship, Anchor, ArrowRight, Globe, ChevronRight } from 'lucide-react';
+import { Instagram, Linkedin, MapPin, Phone, Mail, Ship, Anchor, ArrowRight, Globe, ChevronRight, MessageCircle } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
 export default function Footer() {
@@ -21,81 +21,72 @@ export default function Footer() {
                 {/* Main Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 xl:gap-12 mb-14">
 
-                    {/* Col 1: Logo + Hakkında */}
+                    {/* Col 1: Logo + Slogan */}
                     <div className="lg:col-span-4 space-y-5">
                         <Link href="/" className="inline-block hover:opacity-90 transition-opacity">
-                            <img src="/Beyaz Temar.png" alt="Temar Denizcilik Logo" className="h-32 md:h-44 lg:h-52 w-auto object-contain -ml-2" />
+                            <img src="/images/logo/logo-main.png" alt="Temar Denizcilik Logo" className="h-24 md:h-32 lg:h-40 w-auto object-contain -ml-2 invert brightness-0" />
                         </Link>
-                        <p className="text-slate-400 text-sm leading-relaxed mb-6 pr-4">
-                            {t('Footer.desc')}
+                        <p className="text-slate-400 text-sm leading-relaxed mb-6 pr-4 font-medium italic">
+                            "Denizcilik ve lojistik sektöründe güvenilir çözüm ortağınız; çeyrek asırlık tecrübeyle rotanızı kesintisiz kılıyoruz."
                         </p>
                         <div className="flex items-center gap-3">
                             <a href="https://www.instagram.com/temardenizcilik/" target="_blank" rel="noopener noreferrer"
-                                className="w-9 h-9 rounded-lg flex items-center justify-center transition-all hover:scale-110"
+                                className="w-10 h-10 rounded-xl flex items-center justify-center transition-all hover:scale-110 hover:bg-gradient-to-tr from-purple-600 to-pink-500"
                                 style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}>
-                                <Instagram className="w-4 h-4" style={{ color: '#94a3b8' }} />
+                                <Instagram className="w-5 h-5" />
                             </a>
                             <a href="https://www.linkedin.com/company/temar-denizcilik/" target="_blank" rel="noopener noreferrer"
-                                className="w-9 h-9 rounded-lg flex items-center justify-center transition-all hover:scale-110"
+                                className="w-10 h-10 rounded-xl flex items-center justify-center transition-all hover:scale-110 hover:bg-blue-600"
                                 style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}>
-                                <Linkedin className="w-4 h-4" style={{ color: '#94a3b8' }} />
+                                <Linkedin className="w-5 h-5" />
                             </a>
-                        </div>
-                        {/* Sertifika Rozetleri */}
-                        <div className="flex flex-wrap gap-2 pt-2">
-                            {['ISO 9001', 'ISO 14001', 'MARPOL'].map(cert => (
-                                <span key={cert} className="text-xs px-3 py-1 rounded-full font-semibold"
-                                    style={{ background: 'rgba(29,78,216,0.15)', border: '1px solid rgba(29,78,216,0.3)', color: '#60a5fa' }}>
-                                    {cert}
-                                </span>
-                            ))}
                         </div>
                     </div>
 
                     {/* Quick Links */}
-                    <div className="lg:col-span-2 lg:ml-auto">
+                    <div className="lg:col-span-2">
                         <h4 className="text-white font-bold text-lg mb-6 flex items-center gap-2">
                             <Anchor className="w-5 h-5 text-blue-500" /> {t('Navigation.corporate')}
                         </h4>
                         <ul className="space-y-4">
                             <li>
                                 <Link href="/hakkimizda" className="text-slate-400 hover:text-blue-400 transition-colors flex items-center gap-2 group text-sm">
-                                    <ChevronRight className="w-4 h-4 text-slate-600 group-hover:text-blue-500 transition-colors" /> {t('Navigation.about')}
+                                    <ChevronRight className="w-4 h-4 text-slate-600 group-hover:text-blue-500 transition-colors" /> Biz Kimiz?
+                                </Link>
+                            </li>
+                             <li>
+                                <Link href="/hakkimizda#tarihcemiz" className="text-slate-400 hover:text-blue-400 transition-colors flex items-center gap-2 group text-sm">
+                                    <ChevronRight className="w-4 h-4 text-slate-600 group-hover:text-blue-500 transition-colors" /> Tarihçemiz
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/surdurulebilirlik" className="text-slate-400 hover:text-blue-400 transition-colors flex items-center gap-2 group text-sm">
-                                    <ChevronRight className="w-4 h-4 text-slate-600 group-hover:text-blue-500 transition-colors" /> {t('Navigation.sustainability')}
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/kariyer" className="text-slate-400 hover:text-blue-400 transition-colors flex items-center gap-2 group text-sm">
-                                    <ChevronRight className="w-4 h-4 text-slate-600 group-hover:text-blue-500 transition-colors" /> {t('Navigation.careers')}
+                                <Link href="/hakkimizda#bolgeler" className="text-slate-400 hover:text-blue-400 transition-colors flex items-center gap-2 group text-sm">
+                                    <ChevronRight className="w-4 h-4 text-slate-600 group-hover:text-blue-500 transition-colors" /> Hizmet Bölgelerimiz
                                 </Link>
                             </li>
                         </ul>
                     </div>
 
-                    {/* Services */}
-                    <div className="lg:col-span-3 lg:pl-8">
+                    {/* Legal / Docs */}
+                    <div className="lg:col-span-3 lg:pl-4">
                         <h4 className="text-white font-bold text-lg mb-6 flex items-center gap-2">
-                            <Ship className="w-5 h-5 text-emerald-500" /> {t('Navigation.services')}
+                            <Globe className="w-5 h-5 text-cyan-500" /> Yasal & Dokümanlar
                         </h4>
                         <ul className="space-y-4">
                             <li>
-                                <Link href="/hizmetler#yakit" className="text-slate-400 hover:text-blue-400 transition-colors flex items-center gap-2 group text-sm">
-                                    <ChevronRight className="w-4 h-4 text-slate-600 group-hover:text-blue-500 transition-colors" /> {t('Navigation.bunker')}
+                                <Link href="/kvkk" className="text-slate-400 hover:text-blue-400 transition-colors flex items-center gap-2 group text-sm">
+                                    <ChevronRight className="w-4 h-4 text-slate-600 group-hover:text-blue-500 transition-colors" /> KVKK - Gizlilik Sözleşmesi
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/hizmetler#madeni-yag" className="text-slate-400 hover:text-blue-400 transition-colors flex items-center gap-2 group text-sm">
-                                    <ChevronRight className="w-4 h-4 text-slate-600 group-hover:text-blue-500 transition-colors" /> {t('Navigation.lubricant')}
-                                </Link>
+                                <a href="/docs/terms-temar.pdf" target="_blank" className="text-slate-400 hover:text-blue-400 transition-colors flex items-center gap-2 group text-sm">
+                                    <ChevronRight className="w-4 h-4 text-slate-600 group-hover:text-blue-500 transition-colors" /> Genel Şartlar - Temar
+                                </a>
                             </li>
                             <li>
-                                <Link href="/hizmetler#boya" className="text-slate-400 hover:text-blue-400 transition-colors flex items-center gap-2 group text-sm">
-                                    <ChevronRight className="w-4 h-4 text-slate-600 group-hover:text-blue-500 transition-colors" /> {t('Navigation.paint')}
-                                </Link>
+                                <a href="/docs/terms-fire.pdf" target="_blank" className="text-slate-400 hover:text-blue-400 transition-colors flex items-center gap-2 group text-sm">
+                                    <ChevronRight className="w-4 h-4 text-slate-600 group-hover:text-blue-500 transition-colors" /> Genel Şartlar - Fire
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -103,35 +94,29 @@ export default function Footer() {
                     {/* Col 4: İletişim */}
                     <div className="lg:col-span-3">
                         <h4 className="text-white font-bold text-lg mb-6 flex items-center gap-2">
-                            <Phone className="w-5 h-5 text-purple-500" /> {t('Navigation.contact')}
+                            <Phone className="w-5 h-5 text-emerald-500" /> {t('Navigation.contact')}
                         </h4>
                         <ul className="space-y-4">
                             <li>
-                                <a href="https://maps.google.com/?q=Tuzla+İstanbul" target="_blank" rel="noopener noreferrer"
+                                <a href="https://maps.google.com/maps?q=%C4%B0%C3%A7meler%20Mahallesi%20Ayd%C4%B1nl%C4%B1yolu%20Caddesi%20Alta%C5%9F%20Plaza%20No%3A34%2F4%20Tuzla%20%C4%B0STANBUL" target="_blank" rel="noopener noreferrer"
                                     className="flex items-start gap-3 text-sm group">
                                     <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0 text-blue-500" />
-                                    <span className="leading-relaxed group-hover:text-blue-400 transition-colors" style={{ color: '#64748b' }}>
-                                        İçmeler Mah. Aydınlıyolu Cad.<br />Altaş Plaza No:34/4<br />Tuzla - İSTANBUL
+                                    <span className="leading-relaxed group-hover:text-blue-400 transition-colors text-slate-400">
+                                        İçmeler Mah. Aydınlıyolu Cad. Altaş Plaza No:34/4 Tuzla - İSTANBUL
                                     </span>
                                 </a>
                             </li>
                             <li>
-                                <a href="tel:+902165820052" className="flex items-center gap-3 text-sm hover:text-blue-400 transition-colors" style={{ color: '#64748b' }}>
+                                <a href="tel:+902165820052" className="flex items-center gap-3 text-sm hover:text-blue-400 transition-colors text-slate-400">
                                     <Phone className="w-4 h-4 text-blue-500 flex-shrink-0" />
                                     +90 216 582 00 52
                                 </a>
                             </li>
-                            <li>
-                                <a href="mailto:info@temar.com" className="flex items-center gap-3 text-sm hover:text-blue-400 transition-colors" style={{ color: '#64748b' }}>
-                                    <Mail className="w-4 h-4 text-blue-500 flex-shrink-0" />
-                                    info@temar.com
+                             <li>
+                                <a href="https://wa.me/905367779651" className="flex items-center gap-3 text-sm hover:text-green-400 transition-colors text-slate-400">
+                                    <MessageCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
+                                    +90 536 777 96 51
                                 </a>
-                            </li>
-                            <li className="pt-2">
-                                <Link href="/iletisim"
-                                    className="inline-flex items-center gap-2 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 px-5 py-3 rounded-xl transition-all hover:-translate-y-0.5 w-full justify-center shadow-lg shadow-blue-500/20">
-                                    {t('Navigation.contact')} <ArrowRight className="w-3.5 h-3.5" />
-                                </Link>
                             </li>
                         </ul>
                     </div>
@@ -143,16 +128,16 @@ export default function Footer() {
                 {/* Bottom Bar */}
                 <div className="flex flex-col md:flex-row justify-between items-center gap-4">
                     <div className="text-slate-500 text-sm mb-4 md:mb-0 flex items-center gap-3">
-                        <span>© {new Date().getFullYear()} Temar Denizcilik. {t('Footer.rights')}</span>
+                        <span>© {new Date().getFullYear()} Temar Denizcilik. Tüm Hakları Saklıdır.</span>
                         <span className="text-slate-800">|</span>
-                        <Link href="/admin/login" className="text-slate-600 hover:text-slate-400 transition-colors text-xs font-semibold">
-                            Admin Portallar
+                        <Link href="/admin/login" className="text-slate-600 hover:text-slate-400 transition-colors text-xs font-semibold underline decoration-slate-700 underline-offset-4">
+                            Yönetici Paneli
                         </Link>
                     </div>
-                    <div className="flex items-center gap-2 mt-4 md:mt-0">
-                        <span className="text-slate-600 text-xs">{t('Footer.design')}:</span>
-                        <a href="https://www.proofmedia.com.tr" target="_blank" rel="noopener noreferrer" className="opacity-50 hover:opacity-100 transition-opacity">
-                            <img src="/proof-logo.png" alt="Proof Media" className="h-6 w-auto grayscale scale-150 ml-2" />
+                    <div className="flex items-center gap-4 mt-4 md:mt-0">
+                        <span className="text-slate-600 text-xs tracking-widest uppercase font-bold">Powered BY</span>
+                        <a href="https://www.proofmedia.com.tr" target="_blank" rel="noopener noreferrer" className="opacity-80 hover:opacity-100 transition-all hover:scale-105 active:scale-95">
+                            <img src="/images/logo/proof-logo-white.png" alt="Proof Media" className="h-8 w-auto" />
                         </a>
                     </div>
                 </div>
